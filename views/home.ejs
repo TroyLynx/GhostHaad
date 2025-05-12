@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Calculator</title>
+    <style>
+        #particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    background: #000; /* Optional fallback */
+}
+
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+        body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    margin: 0;
+    overflow: hidden;
+    padding: 2rem;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.main {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 2px solid #00ff00;
+    background-color: #111;
+    box-shadow: 0 0 15px #00ff00;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input[type="text"] {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+    box-shadow: 0 0 5px #00ff00 inset;
+}
+
+input[type="text"]::placeholder {
+    color: #00cc00;
+}
+
+button {
+    background-color: #000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+button:hover {
+    background-color: #003300;
+}
+
+h3 {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #00ff00;
+    text-shadow: 0 0 8px #00ff00;
+    word-wrap: break-word;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div id="particles-js"></div>
+    <div class="main-content">
+        <div class="main">
+            <h1>A simple calculator</h1>
+            <form action="/add" id="calForm" method="POST">
+            <input type="text" name="payload" id="value1">
+            <!-- <input type="text" name="value2" id="value2"> -->
+            <button>Submit</button>
+        </form>
+            <h3>result: <%-result%></h3>
+    
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 120,
+        "density": { "enable": true, "value_area": 800 }
+      },
+      "color": { "value": "#00ff00" },
+      "shape": {
+        "type": "circle",
+        "stroke": { "width": 0, "color": "#000000" }
+      },
+      "opacity": {
+        "value": 0.3,
+        "random": true,
+        "anim": { "enable": false }
+      },
+      "size": {
+        "value": 2,
+        "random": true
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 100,
+        "color": "#00ff00",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 1.6,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": { "enable": true, "mode": "grab" },
+        "onclick": { "enable": true, "mode": "push" },
+        "resize": true
+      },
+      "modes": {
+        "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } },
+        "push": { "particles_nb": 4 }
+      }
+    },
+    "retina_detect": true
+  });
+</script>
+</body>
+</html>
